@@ -19,4 +19,29 @@ Before you can store embeddings in PostgreSQL, you must install the `pgvector` e
    ```bash
    sudo apt update
    sudo apt install git make gcc postgresql-server-dev-16
+
+   sudo apt search pgvector
+   sudo apt install postgresql-pgvector
    ```
+
+2. **Enable extension**:
+   
+   ```sql
+   CREATE EXTENSION IF NOT EXISTS vector;
+   ```
+
+3. **Create table for embeddings**:
+   
+   ```sql
+   CREATE TABLE IF NOT EXISTS embeddings_256 (
+    id SERIAL PRIMARY KEY,
+    content TEXT,
+    token_count INTEGER,
+    embedding VECTOR(256),  -- Replace 256 with your desired dimensionality
+    filename TEXT,
+    parent_section TEXT,
+    url TEXT);
+   ```
+
+
+
