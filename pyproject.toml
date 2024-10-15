@@ -12,6 +12,9 @@ python-dotenv = "^1.0.1"
 pypdfium2 = "^4.30.0"
 langchain-community = "^0.3.2"
 psycopg2 = "^2.9.9"
+sentence-transformers = "^3.2.0"
+langchain-text-splitters = "^0.3.0"
+openai = "^1.51.2"
 
 
 [tool.poetry.group.dev.dependencies]
